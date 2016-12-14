@@ -1,6 +1,6 @@
 package model;
 
 public enum STATUS {
-    busy,
-    available
+    BUSY,
+    AVAILABLE
 }
