@@ -22,6 +22,7 @@ import paquetsJSON.RetourIaStatus;
 @RestController
 public class DameController {
     
+
     private GestionGame gestionGame = new GestionGame();
     
     @RequestMapping(value = "/ai/status", method = RequestMethod.POST)
@@ -30,7 +31,7 @@ public class DameController {
         // Is token the correct one ?
         if (!gestionGame.isGoodToken(token.getToken())) {
             return ResponseEntity
-            .status(HttpStatus.BAD_REQUEST)
+            .status(HttpStatus.UNAUTHORIZED)
             .body("Invalid token.");
         }
         
@@ -48,7 +49,7 @@ public class DameController {
         // Is token the correct one ?
         if (!gestionGame.isGoodToken(e.getToken())) {
             return ResponseEntity
-            .status(HttpStatus.BAD_REQUEST)
+            .status(HttpStatus.UNAUTHORIZED)
             .body("Invalid token.");
         }
         
@@ -63,7 +64,7 @@ public class DameController {
         // Is token the correct one ?
         if (!gestionGame.isGoodToken(e.getToken())) {
             return ResponseEntity
-            .status(HttpStatus.BAD_REQUEST)
+            .status(HttpStatus.UNAUTHORIZED)
             .body("Invalid token.");
         }
     
@@ -90,7 +91,7 @@ public class DameController {
         // Is token the correct one ?
         if (!gestionGame.isGoodToken(e.getToken())) {
             return ResponseEntity
-            .status(HttpStatus.BAD_REQUEST)
+            .status(HttpStatus.UNAUTHORIZED)
             .body("Invalid token.");
         }
     
