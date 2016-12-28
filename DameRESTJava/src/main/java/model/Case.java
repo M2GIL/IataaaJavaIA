@@ -1,6 +1,6 @@
 package model;
 
-public enum CASE {
+public enum Case {
     EMPTY('0'), // '\0'
     BLACK_PAWN('1'), // '\1'
     BLACK_DRAUGHT('2'), // '\2'
@@ -9,7 +9,7 @@ public enum CASE {
     
     private char charRepresentation;
     
-    private CASE(char c) {
+    private Case(char c) {
         charRepresentation = c;
     }
     

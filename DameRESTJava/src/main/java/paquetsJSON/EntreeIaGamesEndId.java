@@ -3,17 +3,17 @@ package paquetsJSON;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import model.CODEENDGAME;
-import model.JOUEUR;
+import model.CodeEndGame;
+import model.Player;
 
 public class EntreeIaGamesEndId {
 
     private String token;
-    private JOUEUR winner;
-    private CODEENDGAME code;
+    private Player winner;
+    private CodeEndGame code;
     
     @JsonCreator
-    public EntreeIaGamesEndId(@JsonProperty("token")String t, @JsonProperty("winner")JOUEUR w, @JsonProperty("code")CODEENDGAME c) {
+    public EntreeIaGamesEndId(@JsonProperty("token")String t, @JsonProperty("winner")Player w, @JsonProperty("code")CodeEndGame c) {
         token = t;
         winner = w;
         code = c;
@@ -23,11 +23,11 @@ public class EntreeIaGamesEndId {
         return token;
     }
 
-    public JOUEUR getWinner() {
+    public Player getWinner() {
         return winner;
     }
 
-    public CODEENDGAME getCode() {
+    public CodeEndGame getCode() {
         return code;
     }
 
@@ -35,11 +35,11 @@ public class EntreeIaGamesEndId {
         this.token = token;
     }
 
-    public void setWinner(JOUEUR winner) {
+    public void setWinner(Player winner) {
         this.winner = winner;
     }
 
-    public void setCode(CODEENDGAME code) {
+    public void setCode(CodeEndGame code) {
         this.code = code;
     }
 

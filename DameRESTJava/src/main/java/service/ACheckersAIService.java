@@ -1,18 +1,18 @@
-package gestionIa;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.STATUS;
+import model.Status;
 
-public abstract class AGestionGame implements IGestionGame{
+public abstract class ACheckersAIService implements ICheckersAIService {
 	
     private String gameID;
-    private STATUS state;
+    private Status state;
     private String token;
     private List<String> listToken;
     
-    public AGestionGame() {
+    public ACheckersAIService() {
     	this.inializeListToken("");
     }
     
@@ -30,8 +30,8 @@ public abstract class AGestionGame implements IGestionGame{
      * Toggles the state between AVAILABLE and BUSY.
      */
     public void toggleState() {
-        state = (state == STATUS.AVAILABLE ? STATUS.BUSY
-                : STATUS.AVAILABLE);
+        state = (state == Status.AVAILABLE ? Status.BUSY
+                : Status.AVAILABLE);
     }
 
     /**
@@ -63,11 +63,11 @@ public abstract class AGestionGame implements IGestionGame{
         this.gameID = gameID;
     }
 
-    public STATUS getState() {
+    public Status getState() {
         return state;
     }
 
-    public void setState(STATUS state) {
+    public void setState(Status state) {
         this.state = state;
     }
 

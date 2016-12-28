@@ -3,15 +3,15 @@ package paquetsJSON;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import model.STATUS;
+import model.Status;
 
 public class RetourIaGamesEndId {
 
     private String token;
-    private STATUS status;
+    private Status status;
     
     @JsonCreator
-    public RetourIaGamesEndId (@JsonProperty("token")String t, @JsonProperty("status")STATUS s) {
+    public RetourIaGamesEndId (@JsonProperty("token")String t, @JsonProperty("status")Status s) {
         token = t;
         status = s;
     }
@@ -20,7 +20,7 @@ public class RetourIaGamesEndId {
         return token;
     }
 
-    public STATUS getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -28,7 +28,7 @@ public class RetourIaGamesEndId {
         this.token = token;
     }
 
-    public void setStatus(STATUS status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

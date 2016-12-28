@@ -1,26 +1,26 @@
-package gestionIa;
+package service;
 
-import java.util.List;
-import java.util.Random;
 
 import exceptions.UnknownGameIDException;
-import model.CODEENDGAME;
-import model.DIFFICULTE;
-import model.JOUEUR;
-import outils.Converter;
-import outils.RandomGenerator;
+import model.CodeEndGame;
+import model.Difficulty;
+import model.Player;
+import utils.Converter;
+import utils.RandomGenerator;
 
-public class GestionGame extends AGestionGame{
+public class CheckersAIService extends ACheckersAIService implements ICheckersAIService {
     
-    public void newGameStarted(DIFFICULTE difficulty, JOUEUR player) {
+    @Override
+    public void newGameStarted(Difficulty difficulty, Player player) {
     	this.setGameID(RandomGenerator.generateNewGameID());
         toggleState();
 
         /// Complete it if you need to do something when a new game starts.
     }
     
-    public char[] gamePlay(String game_ID, DIFFICULTE difficulty,
-                    JOUEUR player,
+    @Override
+    public char[] gamePlay(String game_ID, Difficulty difficulty,
+                    Player player,
                     char[] board) throws UnknownGameIDException {
         // Only if gameID is the good one.
         if (game_ID == this.getGameID()) {
@@ -38,8 +38,9 @@ public class GestionGame extends AGestionGame{
         }
     }
     
-    public void gameEnded(String game_ID, JOUEUR winner,
-                     CODEENDGAME codeEndGame) throws UnknownGameIDException {
+    @Override
+    public void gameEnded(String game_ID, Player winner,
+                     CodeEndGame codeEndGame) throws UnknownGameIDException {
         // Only if gameID is the good one.
         if (game_ID == this.getGameID()) {
             this.setGameID("");

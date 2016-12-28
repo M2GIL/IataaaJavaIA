@@ -1,4 +1,4 @@
-package outils;
+package utils;
 
 public interface IConverter {
 

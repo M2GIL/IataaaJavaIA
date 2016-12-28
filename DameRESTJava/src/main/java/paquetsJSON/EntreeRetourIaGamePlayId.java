@@ -3,17 +3,17 @@ package paquetsJSON;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import model.DIFFICULTE;
-import model.JOUEUR;
+import model.Difficulty;
+import model.Player;
 
 public class EntreeRetourIaGamePlayId {
     private String token;
-    private DIFFICULTE difficulty;
-    private JOUEUR player;
+    private Difficulty difficulty;
+    private Player player;
     private char[] board;
     
     @JsonCreator
-    public EntreeRetourIaGamePlayId (@JsonProperty("token")String t, @JsonProperty("difficulty")DIFFICULTE d, @JsonProperty("player")JOUEUR p, @JsonProperty("board")char[] b) {
+    public EntreeRetourIaGamePlayId (@JsonProperty("token")String t, @JsonProperty("difficulty")Difficulty d, @JsonProperty("player")Player p, @JsonProperty("board")char[] b) {
         token = t;
         difficulty = d;
         player = p;
@@ -23,10 +23,10 @@ public class EntreeRetourIaGamePlayId {
     public String getToken() {
         return token;
     }
-    public DIFFICULTE getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
-    public JOUEUR getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
@@ -38,11 +38,11 @@ public class EntreeRetourIaGamePlayId {
         this.token = token;
     }
 
-    public void setDifficulty(DIFFICULTE difficulty) {
+    public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }
 
-    public void setPlayer(JOUEUR player) {
+    public void setPlayer(Player player) {
         this.player = player;
     }
 

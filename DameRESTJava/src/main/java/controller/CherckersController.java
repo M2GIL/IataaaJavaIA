@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import exceptions.UnknownGameIDException;
-import gestionIa.GestionGame;
+import service.CheckersAIService;
 import paquetsJSON.EntreeIaGamesEndId;
 import paquetsJSON.EntreeIaGamesStart;
 import paquetsJSON.EntreeIaStatus;
@@ -20,10 +20,10 @@ import paquetsJSON.RetourIaStatus;
 
 // Note : Spring se charge lui-même de l'envoie de l'erreur 400 -> "Invalid arguments."
 @RestController
-public class DameController {
+public class CherckersController {
     
 
-    private GestionGame gestionGame = new GestionGame();
+    private final CheckersAIService gestionGame = new CheckersAIService();
     
     @RequestMapping(value = "/ai/status", method = RequestMethod.POST)
     public ResponseEntity<?> status(@RequestBody EntreeIaStatus token) {

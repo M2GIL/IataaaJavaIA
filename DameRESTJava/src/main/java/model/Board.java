@@ -19,13 +19,13 @@ public class Board {
         board = new char[50];
         for (int i = 0; i < 50; ++i) {
             if (i <= 19) {
-                board[i] = CASE.BLACK_PAWN.getCharRepresentation();
+                board[i] = Case.BLACK_PAWN.getCharRepresentation();
             }
             else if (i > 19 && i < 35) {
-                board[i] = CASE.EMPTY.getCharRepresentation();
+                board[i] = Case.EMPTY.getCharRepresentation();
             }
             else {
-                board[i] = CASE.WHITE_PAWN.getCharRepresentation();
+                board[i] = Case.WHITE_PAWN.getCharRepresentation();
             }
         }
     }

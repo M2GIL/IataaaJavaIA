@@ -1,6 +1,6 @@
-package outils;
+package utils;
 
-import model.CASE;
+import model.Case;
 
 public class Converter {
     /**
@@ -29,7 +29,7 @@ public class Converter {
         // Example (white draughts everywhere) :
         char[] a = new char[50];
         for (int i = 0; i < 50; ++i) {
-            a[i] = CASE.WHITE_DRAUGHT.getCharRepresentation();
+            a[i] = Case.WHITE_DRAUGHT.getCharRepresentation();
         }
         return a;
     }
