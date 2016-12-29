@@ -9,13 +9,13 @@ public class RetourIaGamesStart {
 
     private String token;
     private Status status;
-    private String tokenPartie;
+    private String game_id;
     
     @JsonCreator
-    public RetourIaGamesStart(@JsonProperty("token")String t, @JsonProperty("status")Status s, @JsonProperty("tokenPartie")String tp) {
+    public RetourIaGamesStart(@JsonProperty("token")String t, @JsonProperty("status")Status s, @JsonProperty("game_id")String tp) {
         token = t;
         status = s;
-        tokenPartie = tp;
+        game_id = tp;
     }
 
     public String getToken() {
@@ -27,7 +27,7 @@ public class RetourIaGamesStart {
     }
 
     public String getTokenPartie() {
-        return tokenPartie;
+        return game_id;
     }
 
     public void setToken(String token) {
@@ -39,6 +39,6 @@ public class RetourIaGamesStart {
     }
 
     public void setTokenPartie(String tokenPartie) {
-        this.tokenPartie = tokenPartie;
+        this.game_id = tokenPartie;
     }
 }

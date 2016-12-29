@@ -1,7 +1,10 @@
 package service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import model.Status;
 
@@ -12,14 +15,25 @@ public abstract class ACheckersAIService implements ICheckersAIService {
     private String token;
     private List<String> listToken;
     
+    
     public ACheckersAIService() {
-    	this.inializeListToken("");
+    	this.inializeListToken("src/main/java/utils/TokenFile");
     }
     
     public void inializeListToken(String pathTokensFile) {
     	listToken = new ArrayList<String>();
-    	//TODO
-    	listToken.add("toto");
+    	try {
+			File tokenFile = new File(pathTokensFile);
+			Scanner scanner = new Scanner(tokenFile);
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				listToken.add(line);
+				//System.out.println(line);
+			}
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
     }
     
     

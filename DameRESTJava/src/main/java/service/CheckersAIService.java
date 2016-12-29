@@ -9,7 +9,6 @@ import utils.Converter;
 import utils.RandomGenerator;
 
 public class CheckersAIService extends ACheckersAIService implements ICheckersAIService {
-    
     @Override
     public void newGameStarted(Difficulty difficulty, Player player) {
     	this.setGameID(RandomGenerator.generateNewGameID());
