@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import exceptions.UnknownGameIDException;
+import model.Status;
 import service.CheckersAIService;
 import paquetsJSON.EntreeIaGamesEndId;
 import paquetsJSON.EntreeIaGamesStart;
@@ -38,7 +39,8 @@ public class CherckersController {
         // Returns the status.
         return ResponseEntity
             .ok()
-            .body(new RetourIaStatus(gestionGame.getToken(), gestionGame.getState()));
+            .body(new RetourIaStatus(gestionGame.getToken(), //gestionGame.getState())); // ATTENTION, faudra rétablir ce code après les tests.
+                Status.AVAILABLE));
     }
     
     @RequestMapping(value="/ai/games/start/", method = RequestMethod.POST)
