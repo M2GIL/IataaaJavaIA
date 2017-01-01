@@ -20,6 +20,7 @@ public abstract class ACheckersAIService implements ICheckersAIService {
     	listToken = new ArrayList<String>();
     	//TODO
     	listToken.add("toto");
+        listToken.add("tata");
     }
     
     
