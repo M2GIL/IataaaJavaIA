@@ -119,7 +119,7 @@ méthodes de la classe ```Converter``` pour que tout soit fonctionnel.
 
 Vous trouverez ci-dessous la liste de toutes les méthodes paramétrables.
 
-Dans ```GestionGame.java``` :
+Dans ```service.CheckersAIService.java``` :
 * La méthode ```newGameStarted``` peut être paramétrée à votre guise. Elle est appelée automatiquement au démarrage d'une nouvelle partie.  
 Elle reçoit en paramètre la difficulté de la nouvelle partie ainsi que le joueur que votre IA incarnera.
 * La méthode ```gamePlay``` doit contenir l'appel à votre IA pour décider du prochain coup.  
