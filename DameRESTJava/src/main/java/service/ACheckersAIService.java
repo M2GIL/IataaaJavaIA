@@ -21,6 +21,8 @@ public abstract class ACheckersAIService implements ICheckersAIService {
     }
     
     public void inializeListToken(String pathTokensFile) {
+    	//TODO bug : read of the tokens file do not work in controleur 
+    	/*
     	listToken = new ArrayList<String>();
     	try {
 			File tokenFile = new File(pathTokensFile);
@@ -34,6 +36,8 @@ public abstract class ACheckersAIService implements ICheckersAIService {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		*/
+    	listToken.add("toto");
     }
     
     

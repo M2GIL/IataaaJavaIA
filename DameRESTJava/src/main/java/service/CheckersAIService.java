@@ -1,6 +1,8 @@
 package service;
 
 
+import org.springframework.stereotype.Service;
+
 import exceptions.UnknownGameIDException;
 import model.CodeEndGame;
 import model.Difficulty;
@@ -9,6 +11,17 @@ import utils.Converter;
 import utils.RandomGenerator;
 
 public class CheckersAIService extends ACheckersAIService implements ICheckersAIService {
+	
+	/*
+	 * test token init
+	 */
+	/*
+	public static void main(String[] args){	
+		CheckersAIService service = new CheckersAIService();
+		System.out.println(service.isGoodToken("totd"));
+	}
+	*/
+	
     @Override
     public void newGameStarted(Difficulty difficulty, Player player) {
     	this.setGameID(RandomGenerator.generateNewGameID());

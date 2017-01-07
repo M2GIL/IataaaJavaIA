@@ -23,7 +23,7 @@ import paquetsJSON.RetourIaStatus;
 public class CherckersController {
     
 
-    private final CheckersAIService gestionGame = new CheckersAIService();
+    private CheckersAIService gestionGame = new CheckersAIService();
     
     @RequestMapping(value = "/ai/status", method = RequestMethod.POST)
     public ResponseEntity<?> status(@RequestBody EntreeIaStatus token) {
@@ -50,7 +50,7 @@ public class CherckersController {
         if (!gestionGame.isGoodToken(e.getToken())) {
             return ResponseEntity
             .status(HttpStatus.UNAUTHORIZED)
-            .body("Invalid token.");
+            .body("Invalid token. : " + e.getToken() + " " + gestionGame.isGoodToken(e.getToken()) +" " + gestionGame.getListToken());
         }
         
         return ResponseEntity
