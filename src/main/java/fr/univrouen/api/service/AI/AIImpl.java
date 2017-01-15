@@ -22,12 +22,12 @@ import java.util.List;
 public class AIImpl implements AI {
 
     @Override
-    public void startGame(String gameId, Difficulty difficulty, EnumPlayer player) {
+    public void startGame(Difficulty difficulty, EnumPlayer player) {
         
     }
 
     @Override
-    public Case[] play(String gameId, Difficulty difficulty, EnumPlayer player, Case[] boardCase) {
+    public Case[] play(Difficulty difficulty, EnumPlayer player, Case[] boardCase) {
         Case[] cases = boardCase;
         Piece[] pieces = new Piece[cases.length];
         for (int i = 0; i < cases.length; ++i) {

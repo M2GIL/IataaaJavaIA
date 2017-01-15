@@ -10,12 +10,30 @@ import fr.univrouen.api.model.CodeEndGame;
 import fr.univrouen.api.model.Difficulty;
 import fr.univrouen.api.model.EnumPlayer;
 
+
 /**
  *
  * @author anto
  */
 public interface AI {
-    Case[] play(String gameId, Difficulty difficulty, EnumPlayer player, Case[] board);
+    /**
+     * End of the game.
+     * @param winner
+     * @param code 
+     */
     void endGame(EnumPlayer winner, CodeEndGame code);
-    void startGame(String gameId, Difficulty difficulty, EnumPlayer player);
+    /**
+     * Return a movement of game. 
+     * @param difficulty
+     * @param player
+     * @param board
+     * @return movement of game.
+     */
+    Case[] play(Difficulty difficulty, EnumPlayer player, Case[] board);
+    /**
+     * Start the game with difficulty. The ai player number is player.
+     * @param difficulty
+     * @param player 
+     */
+    void startGame(Difficulty difficulty, EnumPlayer player);
 }

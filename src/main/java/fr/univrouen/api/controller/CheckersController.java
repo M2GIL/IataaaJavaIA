@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.univrouen.api.service.CherckersService;
 import org.springframework.http.HttpStatus;
 
-
+/**
+ *
+ * @author anto
+ */
 @RestController
 public class CheckersController {
     
@@ -27,9 +30,6 @@ public class CheckersController {
     @RequestMapping(value = "/ai/status", method = RequestMethod.POST)
     public ResponseEntity<StatusResponse> getStatus(@RequestBody StatusRequest request) {
        StatusResponse response = service.getStatus(request);
-        
-       System.out.println("GET STATUS");
-       System.out.println("response = " + response);
        
        if (response != null) {
             return ResponseEntity
@@ -59,10 +59,6 @@ public class CheckersController {
     @RequestMapping(value = "/ai/games/play/{game_id}", method = RequestMethod.POST)
     public ResponseEntity<PlayGameRequest> play(@PathVariable("game_id") String game_id, @RequestBody PlayGameRequest request) {
         PlayGameRequest response = service.play(game_id, request);
-        
-        System.out.println("PLAY");
-        System.out.println("response = " + response);
-
         if (response != null) {
              return ResponseEntity
                  .ok()
@@ -79,10 +75,6 @@ public class CheckersController {
             @RequestBody EndGameRequest request) {
         
         EndGameResponse response = service.endGame(game_id, request);
-        
-        System.out.println("END");
-        System.out.println("response = " + response);
-
         if (response != null) {
              return ResponseEntity
                  .ok()
@@ -90,7 +82,6 @@ public class CheckersController {
         } else {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-
      }
 
 }

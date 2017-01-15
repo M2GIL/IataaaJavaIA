@@ -94,7 +94,7 @@ public class CheckersServiceImpl implements CherckersService {
             st = StatusService.AVAILABLE;
             Difficulty difficulty = request.getDifficulty();
             EnumPlayer playerNb = request.getPlayer();
-            ai.startGame(token, difficulty, playerNb);
+            ai.startGame(difficulty, playerNb);
         } else {
             st = StatusService.BUSY;
         }
@@ -120,7 +120,7 @@ public class CheckersServiceImpl implements CherckersService {
         Difficulty difficulty = request.getDifficulty();
         EnumPlayer playerNb = request.getPlayer();
         Case[] board = request.getBoard();
-        Case[] movement = ai.play(gameId, difficulty, playerNb, board);
+        Case[] movement = ai.play(difficulty, playerNb, board);
         
         PlayGameRequest response = new PlayGameRequest();
         response.setBoard(movement);
