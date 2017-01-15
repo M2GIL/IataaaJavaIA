@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.2.RELEASE</version>
+        <version>1.4.3.RELEASE</version>
     </parent>
     
     <groupId>fr.univrouen</groupId>
@@ -45,13 +45,7 @@
             <version>2.10.4</version>
             <type>maven-plugin</type>
         </dependency>
-        
-        <dependency>
-            <groupId>javax.interceptor</groupId>
-            <artifactId>javax.interceptor-api</artifactId>
-            <version>1.2</version>
-        </dependency>
-        
+           
     </dependencies>
     
 </project>
