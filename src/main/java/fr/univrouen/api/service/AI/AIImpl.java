@@ -10,6 +10,7 @@ import fr.univrouen.api.model.CodeEndGame;
 import fr.univrouen.api.model.Difficulty;
 import fr.univrouen.api.model.EnumPlayer;
 import fr.univrouen.api.service.AI.util.Board;
+import fr.univrouen.api.service.AI.util.DisplayBoard;
 import fr.univrouen.api.service.AI.util.Piece;
 import fr.univrouen.api.service.AI.util.PlayerNb;
 import fr.univrouen.api.service.AI.util.Rules;
@@ -53,9 +54,23 @@ public class AIImpl implements AI {
         
         
         Board<Piece> board = new Board<>(pieces);
-        List<Board<Piece>> boards = Rules.getAvailableMoves(board, PlayerNb.PLAYER_1);
+        
+        System.out.println("Board recu :");
+        System.out.println("-----------------------");
+        DisplayBoard.displayBoard(board);
+        System.out.println("-----------------------");
+        
+        PlayerNb pl = (player == EnumPlayer.J1) ? PlayerNb.PLAYER_1 : PlayerNb.PLAYER_2;
+        List<Board<Piece>> boards = Rules.getAvailableMoves(board, pl);
         if (!boards.isEmpty()) {
-            pieces = boards.get(0).toArray();
+            int l = (int) (Math.random() * boards.size());
+            pieces = boards.get(l).toArray();
+            
+            System.out.println("Board répondu :");
+            System.out.println("-----------------------");
+            DisplayBoard.displayBoard(boards.get(l));
+            System.out.println("-----------------------");
+            
             for (int i = 0; i < cases.length; ++i) {
                 Piece p = pieces[i];
                 switch (p) {
@@ -84,7 +99,8 @@ public class AIImpl implements AI {
 
     @Override
     public void endGame(EnumPlayer winner, CodeEndGame code) {
-        
+        System.out.println("Le gagnant est : " + winner);
+        System.out.println("code de victoire : " + code);
     }
     
     
