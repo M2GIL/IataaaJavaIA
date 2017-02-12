@@ -1,5 +1,5 @@
 # Iataaa JavaIA
-Iataaa JavaIa web service which may contain artificial intelligence to game checkers 
+Iataaa JavaIa web service which may contain artificial intelligence to game checkers. 
 
 ## Getting Started
 ### Building the project
